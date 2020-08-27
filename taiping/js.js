@@ -2,6 +2,7 @@ $(function () {
   // jQueryオブジェクトを変数に代入
   const $yomi = $("#yomi");
   const $mondai = $("#mondai");
+  const $finishPanel = $("#finish-panel");
 
   // 問題用の変数の初期化
   let char_index = 1;
@@ -31,9 +32,13 @@ $(function () {
     }
 
     if (max_length < char_index) {
+      question_number++;
+      if (question_limit < question_number) {
+        finish();
+        return;
+      }
       changeQuestionWord();
       char_index = 1; //初期化
-      question_number++;
     }
   });
 
@@ -48,5 +53,11 @@ $(function () {
     // console.log('newHtml: '+newHtml);
     $mondai.html(newHtml);
     $yomi.text(MONDAI_LIST[question_number]["yomi"]);
+  }
+
+  function finish() {
+    $finishPanel.removeClass("hidden");
+    $yomi.hide();
+    $mondai.hide();
   }
 });
