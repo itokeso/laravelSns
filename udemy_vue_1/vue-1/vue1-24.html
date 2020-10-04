@@ -1,0 +1,29 @@
+<!-- 33 複数のスタイルオブジェクトを配列構文を使って処理 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<div id="app">
+  <h1 :style="[styleObject, baseStyles]">Hello</h1>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      styleObject: {
+        color: 'red',
+        'background-color': 'blue'
+      },
+      baseStyles: {
+        fontSize: '60px'
+      }
+    }
+  })
+</script>
