@@ -1,4 +1,4 @@
-<!-- 1 v-ifディレクティブを使って、条件に応じて描画する処理を書く -->
+<!-- 4 templateタグを使用して不必要な要素を加えずにv-ifを複数の要素に適用させる -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +11,19 @@
 
 <body>
   <div id="app">
-    <p v-if="ok">OK!</p>
+    <template v-if="ok">
+      <p>Hello!</p>
+      <p>good bye!</p>
+      <p>おはよう！</p>
+    </template>
+    <button @click="ok = !ok">切り替え</button>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        ok: true,
+        ok: true
       }
     })
   </script>

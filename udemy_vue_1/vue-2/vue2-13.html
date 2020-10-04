@@ -1,0 +1,36 @@
+<!-- 13 key属性をつける必要性を学ぶ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <div v-for="fruit in fruits" :key="fruit">
+        <p>{{ fruit }}</p>
+        <input type="text">
+      </div>
+    </ul>
+    <button @click="remove">先頭を削除</button>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        fruits: ['りんご', 'ばなな', 'ぶどう']
+      },
+      methods: {
+        remove: function () {
+          this.fruits.shift()
+        }
+      }
+    })
+  </script>
+</body>

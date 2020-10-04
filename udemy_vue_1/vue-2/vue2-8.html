@@ -1,0 +1,37 @@
+<!-- 8 オブジェクトにたいしてv-forディレクティブを使う -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <ul>
+      <li v-for="(fruit , index) in fruits">({{ index }}){{ fruit }}</li>
+    </ul>
+    <ul>
+      <li v-for="value in object">{{ value }}</li>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        fruits: ['りんご', 'ばなな', 'ぶどう'],
+        object: {
+          firstName: '太郎',
+          lastName: '田中',
+          age: 21
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

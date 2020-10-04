@@ -1,4 +1,4 @@
-<!-- 1 v-ifディレクティブを使って、条件に応じて描画する処理を書く -->
+<!-- 5 v-showを使って、頻繁に何かを切り替える処理を行う -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +11,16 @@
 
 <body>
   <div id="app">
-    <p v-if="ok">OK!</p>
+    <button @click="ok = !ok">切り替え</button>
+    <p v-if="ok">if</p>
+    <p v-show="ok">show</p>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        ok: true,
+        ok: true
       }
     })
   </script>

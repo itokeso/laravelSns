@@ -1,4 +1,4 @@
-<!-- 1 v-ifディレクティブを使って、条件に応じて描画する処理を書く -->
+<!-- 3 v-sele-ifを使って、複雑な条件式を作る -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +12,16 @@
 <body>
   <div id="app">
     <p v-if="ok">OK!</p>
+    <p v-else-if="maybeOk">maybe OK!</p>
+    <p v-else>Not OK</p>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        ok: true,
+        ok: false,
+        maybeOk: true
       }
     })
   </script>
