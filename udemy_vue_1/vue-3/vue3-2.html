@@ -1,0 +1,43 @@
+<!-- 2 外側からvueインスタンスにアクセスする方法 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app1">
+    <p>{{ message }}</p>
+  </div>
+
+  <div id="app2">
+    <p>{{ message }}</p>
+    <button @click="changeMessage1">インスタンス1のメッセージを変更</button>
+  </div>
+
+  <script>
+    var vm1 = new Vue({
+      el: '#app1',
+      data: {
+        message: 'インスタンス１'
+      }
+    })
+    var vm2 = new Vue({
+      el: '#app2',
+      data: {
+        message: 'インスタンス２'
+      },
+      methods: {
+        changeMessage1: function () {
+          vm1.message = 'インスタンス２から変えました'
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!-- 1 vueインスタンスは複数作ることが出来る -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app1">
+    <p>{{ message }}</p>
+  </div>
+
+  <div id="app2">
+    <p>{{ message }}</p>
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app1',
+      data: {
+        message: 'インスタンス１'
+      }
+    })
+    new Vue({
+      el: '#app2',
+      data: {
+        message: 'インスタンス２'
+      }
+    })
+  </script>
+</body>
+
+</html>
